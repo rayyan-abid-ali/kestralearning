@@ -11,7 +11,8 @@
 
 select
   source_data.*,
-  CASE WHEN id is null THEN 'this is null' ELSE 'this is not null' END AS is_this_null
+  CASE WHEN id is null THEN 'this is null' ELSE 'this is not null' END AS is_this_null,
+  'If kestra workflow works this will appear' AS kestra_test
 from {{ ref("my_first_dbt_model") }}  AS source_data
 
 /*
